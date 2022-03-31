@@ -8,20 +8,6 @@ class Employee < ActiveRecord::Base
   end
 
   def self.lowest_salary
-    self.all.order(salary: :desc).last
+    self.all.order(salary: :asc)
   end
-
-  def self.highest_salary
-    self.all.order(salary: :desc).first
-  end
-
-
-
-
-
-
-
-
-
-
 end

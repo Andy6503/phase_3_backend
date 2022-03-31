@@ -8,10 +8,6 @@ class Manager < ActiveRecord::Base
   end
 
   def self.lowest_salary
-    self.all.order(salary: :desc).last
-  end
-
-  def self.highest_salary
-    self.all.order(salary: :desc).first
+    self.all.order(salary: :asc)
   end
 end
