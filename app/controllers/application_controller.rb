@@ -7,6 +7,10 @@ class ApplicationController < Sinatra::Base
     employees = Employee.all
     employees.to_json
   end
+  get '/employees/:id' do
+    employee = Employee.find(params[:id])
+    employee.to_json
+  end
 
   get '/employees/by_salary' do
     # see the employees class for the  method definition of `.by_salary`
@@ -39,7 +43,7 @@ class ApplicationController < Sinatra::Base
   end
 
   ###UPDATE(PATCH)####################
-  patch 'employees/:id' do
+  patch '/employees/:id' do
     employee = Employee.find(params[:id])
     employee.update(
       name: params[:name],
@@ -103,7 +107,7 @@ class ApplicationController < Sinatra::Base
   end
 
   ###UPDATE(PATCH)####################
-  patch 'managers/:id' do
+  patch '/managers/:id' do
     manager = Manager.find(params[:id])
     manager.update(
       name: params[:name],
