@@ -6,12 +6,7 @@ class Supervisor < ActiveRecord::Base
   def self.by_salary
     self.all.order(salary: :desc)
   end
-
   def self.lowest_salary
-    self.all.order(salary: :desc).last
-  end
-
-  def self.highest_salary
-    self.all.order(salary: :desc).first
+    self.all.order(salary: :asc)
   end
 end

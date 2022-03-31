@@ -76,7 +76,7 @@ class ApplicationController < Sinatra::Base
     managers.to_json
   end
 
-  get '/managers/by_salary_asc' do
+  get '/managers/by_salary_asc/' do
     # RETURNS THE EMPLOYEE WITH THE LOWEST SALARY
     managers = Manager.lowest_salary
     managers.to_json
@@ -128,21 +128,15 @@ class ApplicationController < Sinatra::Base
     supervisors.to_json
   end
 
-  get '/supervisors/by_salary' do
+  get '/supervisors/by_salary/' do
     # see the managers class for the  method definition of `.by_salary`
     supervisors = Supervisor.by_salary
     supervisors.to_json
   end
 
-  get '/supervisors/lowest_salary' do
-    # RETURNS THE SUPERVISOR WITH THE LOWEST SALARY
+  get '/supervisors/by_salary_asc/' do
+    # RETURNS THE EMPLOYEE WITH THE LOWEST SALARY
     supervisors = Supervisor.lowest_salary
-    supervisors.to_json
-  end
-
-  get '/supervisors/highest_salary' do
-    # RETURNS THE SUPERVISOR WITH THE HIGHEST SALARY
-    supervisors = Supervisor.highest_salary
     supervisors.to_json
   end
 
