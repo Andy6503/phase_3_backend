@@ -41,7 +41,12 @@ class ApplicationController < Sinatra::Base
   ###UPDATE(PATCH)####################
   patch 'employees/:id' do
     employee = Employee.find(params[:id])
-    employee.update(position: params[:position], salary: params[:salary])
+    employee.update(
+      name: params[:name],
+      position: params[:position],
+      salary: params[:salary],
+      date_of_birth: params[:date_of_birth],
+    )
     employee.to_json
   end
 
@@ -100,7 +105,12 @@ class ApplicationController < Sinatra::Base
   ###UPDATE(PATCH)####################
   patch 'managers/:id' do
     manager = Manager.find(params[:id])
-    manager.update(position: params[:position], salary: params[:salary])
+    manager.update(
+      name: params[:name],
+      position: params[:position],
+      salary: params[:salary],
+      date_of_birth: params[:date_of_birth],
+    )
     manager.to_json
   end
 
@@ -159,7 +169,12 @@ class ApplicationController < Sinatra::Base
   ###UPDATE(PATCH)####################
   patch 'supervisors/:id' do
     supervisor = Supervisor.find(params[:id])
-    supervisor.update(position: params[:position], salary: params[:salary])
+    supervisor.update(
+      name: params[:name],
+      position: params[:position],
+      salary: params[:salary],
+      date_of_birth: params[:date_of_birth],
+    )
     supervisor.to_json
   end
 
