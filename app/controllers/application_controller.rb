@@ -171,7 +171,7 @@ class ApplicationController < Sinatra::Base
   end
 
   ###UPDATE(PATCH)####################
-  patch 'supervisors/:id' do
+  patch '/supervisors/:id' do
     supervisor = Supervisor.find(params[:id])
     supervisor.update(
       name: params[:name],
