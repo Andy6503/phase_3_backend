@@ -10,4 +10,7 @@ class Manager < ActiveRecord::Base
   def self.lowest_salary
     self.all.order(salary: :asc)
   end
+  def self.all_employees
+    self.employees
+  end
 end
