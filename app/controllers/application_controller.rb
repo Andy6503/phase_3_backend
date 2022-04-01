@@ -24,6 +24,11 @@ class ApplicationController < Sinatra::Base
     employees.to_json
   end
 
+  get 'employees/:id/managers' do
+    employee = Employee.find(params[:id])
+    employee.manager.to_json
+  end
+
   ###CREATE(POST)####################
   post '/employees' do
     employee =
