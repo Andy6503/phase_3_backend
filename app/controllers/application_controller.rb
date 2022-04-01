@@ -138,6 +138,12 @@ class ApplicationController < Sinatra::Base
     supervisors.to_json
   end
 
+  # get supervisors managers
+  get '/supervisors/:id/managers' do
+    supervisor = Supervisor.find(params[:id])
+    supervisor.managers.to_json
+  end
+
   get '/supervisors/by_salary/' do
     # see the managers class for the  method definition of `.by_salary`
     supervisors = Supervisor.by_salary
